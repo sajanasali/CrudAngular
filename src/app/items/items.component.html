@@ -1,0 +1,39 @@
+<div class="container p-2 mx-auto sm:p-4 text-gray-800">
+	<h2 class="mb-4 text-2xl font-semibold leading-tight">Invoices</h2>
+	<div class="overflow-x-auto">
+		<table class="min-w-full text-xs">
+			<colgroup>
+				<col>
+				<col>
+				
+				<col class="w-24">
+			</colgroup>
+			<thead class="bg-gray-300">
+				<tr class="text-left">
+					<th class="p-3">Item Name</th>
+					
+					<th class="p-3 text-left">Description</th>
+					<th class="p-3">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let data of datas"   class="border-b border-opacity-20 border-gray-300 bg-gray-50">
+					<td class="p-3">
+						<p>{{data?.name}}</p>
+					</td>
+					<td class="p-3">
+						<p>{{data?.description}}</p>
+					</td>
+					
+					<td class="p-3 text-right">
+						<div class="px-3 py-1 m-3  p-2 flex gap-7 font-semibold  rounded-md bg-violet-600 text-gray-50">
+							<button class="w-5"  (click)="editItem(data?._id)">Edit</button>
+                            <button    class="w-8"  (click)="deletItem(data?._id)">Delete</button>
+                        </div>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</div>

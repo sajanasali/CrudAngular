@@ -14,15 +14,20 @@ ApibaseUrl=environment.baseUrl
   createItem(items:item){
     return this.http.post(this.ApibaseUrl+`create`,items)
   }
-//get item data
+//get items data
   getData(){
     console.log("in service")
     return this.http.get(this.ApibaseUrl+'getItem')
   }
+  //getdata of an item
   getItem(id:string){
-    return this.http.get(this.ApibaseUrl+`Edititem/${id}`)
+    return this.http.get(this.ApibaseUrl+`edititem/${id}`)
   }
-
+//update changed item data
+updateItem(id:string,item:item){
+  console.log(item,"item in service")
+  return this.http.patch(this.ApibaseUrl+`updateItem/${id}`,item)
+}
 //delete item
 
 deleteItem(id:string){
